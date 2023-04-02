@@ -1,33 +1,17 @@
-const carrosel = document.querySelector('.carrosel-slide');
-const carroselItens = document.querySelector('.itens');
+let count = 1;
+document.getElementById("radio1").checked = true;
 
-let scrollPos = 0;
-let currentIndex = 0;
-
-carroselItens.forEach((item, index) => {
-  item.style.left = `${index * 100}%`;
-});
-
-function scrollToIndex(index) {
-  currentIndex = index;
-  scrollPos = currentIndex * -100;
-  carrosel.style.transform = `translateX(${scrollPos}%)`;
+if(count === 1){
+  
 }
+setInterval(function(){
+  nextImage()
+},3000);
 
-function next() {
-  if (currentIndex < carroselItens.length - 1) {
-    scrollToIndex(currentIndex + 1);
+function nextImage(){
+  count++;
+  if(count>3){
+    count = 1
   }
+  document.getElementById("radio"+count).checked = true;
 }
-
-function prev() {
-  if (currentIndex > 0) {
-    scrollToIndex(currentIndex - 1);
-  }
-}
-
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-
-prevBtn.addEventListener('click', prev);
-nextBtn.addEventListener('click', next);

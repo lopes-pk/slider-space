@@ -1,27 +1,30 @@
 html {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .screen {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(#0f2027, #203a43, #2c5364);
+  background: url(images/beautiful-shot-starry-night-sky.jpg);
+  /* background: linear-gradient(#0f2027, #203a43, #2c5364); */
   background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100vh;
   max-width: 100vw;
 }
 
 .slider {
-  display: flex;
   overflow: hidden;
   width: 800px;
   height: 400px;
-  background-color: white;
+  border: 2px solid rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 30px 5px #ffffff54;
+  border-radius: 10px;
 }
 
 .slides{
   width: 300%;
-  height: 20px;
+  height: 100%;
   display: flex;
 }
 
@@ -30,10 +33,82 @@ html {
 }
 
 .slide {
-  width:100%;
-  position: relative;
+  width:calc(2400px /3);
+  position: relative; 
+  height: auto;
 }
 
 .slide img{
   width: 100%;
+  height: 100%;
+}
+
+.manual-navigation{
+  position: absolute;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  margin-top: -40px;
+}
+
+.manual-btn{
+  border:2px solid white;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition:.6s;
+
+}
+
+.manual-btn:not(lost-child){
+  margin-right: 30px;
+}
+
+.manual-btn:hover{
+  background-color: white;
+}
+
+#radio1:checked ~ .first{
+  transition: 1.6s;
+
+}
+#radio2:checked ~ .first{
+  transition: 2s;
+  margin-left:calc(-100% /3);
+}
+#radio3:checked ~ .first{
+  transition: 2s;
+  margin-left:-66.68%;
+}
+
+.navigation-auto div {
+  border: 2px solid blue;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .6s;
+
+}
+
+.navigation-auto{
+  position: absolute;
+  width: 800px;
+  margin-top: 360px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.navigation-auto div:not(lost-child){
+  margin-right: 30px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+  background-color: white;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+  background-color: white;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+  background-color: white;
 }
