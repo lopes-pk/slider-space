@@ -22,7 +22,7 @@ function inners() {
 }
 setInterval(function () {
   nextImage();
-}, 7000);
+}, 3000);
 
 function nextImage() {
   count++;
